@@ -1,10 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eaeaea;
 }
 
 code {
@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 .container {
   max-width: 1250px;
   padding-left: 25px;
@@ -19,4 +24,10 @@ code {
   margin-left: auto;
   margin-right: auto;
   /* box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1); */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
