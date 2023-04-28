@@ -1,0 +1,22 @@
+.header {
+  padding: 13px 0 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__icon-box {
+    display: flex;
+    align-items: center;
+  }
+  &__saved-icon {
+    margin-right: 45px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header {
+    padding: 20px 0 13px;
+    &__saved-icon {
+      margin-right: 25px;
+    }
+  }
+}
