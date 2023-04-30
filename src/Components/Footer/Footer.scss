@@ -22,8 +22,44 @@
     color: #000000;
     text-decoration: none;
 
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
     &--active {
       color: #ffa542;
+    }
+  }
+
+  &__service {
+    margin-bottom: 34px !important;
+    display: block;
+  }
+}
+
+.language {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #101010;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &--active {
+      color: #ffa542;
+      font-weight: 700;
     }
   }
 }

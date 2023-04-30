@@ -1,12 +1,21 @@
+import React from "react";
+
 import "./Footer.scss";
+
 import Logo from "../../Assets/Images/logo.svg";
 import VkLogo from "../../Assets/Images/VK.svg";
 import InstagramLogo from "../../Assets/Images/Instagram.svg";
 import TelegramLogo from "../../Assets/Images/Telegram.svg";
 import WhatsappLogo from "../../Assets/Images/Whatsapp.svg";
+import LanguageIcon from "../../Assets/Images/lang-icon.svg";
 import { NavLink, Link } from "react-router-dom";
 
+import { Context } from "../../Context/Localization/Localization";
+
+import languages from "../../Localization/Localization";
+
 function Footer() {
+  const { lang, setLang } = React.useContext(Context);
   return (
     <footer className="footer">
       <div>
@@ -15,47 +24,90 @@ function Footer() {
         </Link>
       </div>
       <ul>
-        <li>
+        <li className="footer__texts">
           <NavLink
             className={({ isActive }) =>
               "footer__texts " + (isActive ? "footer__texts--active" : "")
             }
             to="/saved"
           >
-            Избранное
+            {languages[lang]?.footer.saved}
           </NavLink>
         </li>
-        <li>
+        <li className="footer__texts">
           <NavLink
             className={({ isActive }) =>
               "footer__texts " + (isActive ? "footer__texts--active" : "")
             }
             to="/ordered"
           >
-            Корзина
+            {languages[lang]?.footer.backed}
           </NavLink>
         </li>
-        <li>
+        <li className="footer__texts">
           <NavLink
             className={({ isActive }) =>
               "footer__texts " + (isActive ? "footer__texts--active" : "")
             }
             to="/contacts"
           >
-            Контакты
+            {languages[lang]?.footer.contacts}
           </NavLink>
         </li>
       </ul>
       <div>
         <NavLink
           className={({ isActive }) =>
-            "footer__texts " + (isActive ? "footer__texts--active" : "")
+            "footer__texts footer__service " +
+            (isActive ? "footer__texts--active" : "")
           }
           to="/service-requirements"
         >
-          Условия сервиса
+          {languages[lang]?.footer.service}
         </NavLink>
-        <div></div>
+        <div>
+          <ul className="language__list">
+            <li className="language__item">
+              <img src={LanguageIcon} alt="Language icon" />
+            </li>
+            <li className="language__item">
+              <button
+                className={`language__item ${
+                  lang === "uz" ? "language__item--active" : ""
+                } `}
+                onClick={() => {
+                  setLang("uz");
+                }}
+              >
+                Uz
+              </button>
+            </li>
+            <li className="language__item">
+              <button
+                className={`language__item ${
+                  lang === "ru" ? "language__item--active" : ""
+                } `}
+                onClick={() => {
+                  setLang("ru");
+                }}
+              >
+                Рус
+              </button>
+            </li>
+            <li className="language__item">
+              <button
+                className={`language__item ${
+                  lang === "en" ? "language__item--active" : ""
+                } `}
+                onClick={() => {
+                  setLang("en");
+                }}
+              >
+                Eng
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="footer__social-box">
@@ -73,10 +125,18 @@ function Footer() {
         >
           <img src={InstagramLogo} alt="Instagram logo" />
         </a>
-        <a className="footer__social-icons" target="_blank" href="#link">
+        <a
+          className="footer__social-icons"
+          target="_blank"
+          href="https://telegram.org"
+        >
           <img src={TelegramLogo} alt="Telegram logo" />
         </a>
-        <a className="footer__social-icons" target="_blank" href="#link">
+        <a
+          className="footer__social-icons"
+          target="_blank"
+          href={"https://www.whatsapp.com/?lang=" + lang}
+        >
           <img src={WhatsappLogo} alt="Whatsapp logo" />
         </a>
       </div>
