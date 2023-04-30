@@ -1,9 +1,15 @@
+*,
+*,
 body {
   margin: 0;
-
-  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
   background-color: #eaeaea;
 }
 
