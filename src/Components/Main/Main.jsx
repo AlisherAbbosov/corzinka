@@ -19,7 +19,7 @@ function Main() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/service-requirements" element={<Service />} />
         <Route path="/ordering" element={<Ordering />} />
-        <Route path="/product:id" element={<Product />} />
+        <Route path="/product/:product_id" element={<Product />} />
       </Routes>
     </div>
   );
