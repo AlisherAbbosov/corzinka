@@ -22,4 +22,29 @@
   &.black {
     padding: 20px 169px;
   }
+  &.product-buy {
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #ffffff;
+    padding: 13px;
+    width: 100%;
+    margin-bottom: 18px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+
+  &.product-add {
+    display: flex;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    align-items: center;
+    color: #ffffff;
+    padding: 10px 0 10px 16px;
+    width: 100%;
+    white-space: nowrap;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
 }

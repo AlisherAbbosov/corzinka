@@ -39,7 +39,7 @@ function Footer() {
             className={({ isActive }) =>
               "footer__texts " + (isActive ? "footer__texts--active" : "")
             }
-            to="/ordered"
+            to="/cart"
           >
             {languages[lang]?.footer.backed}
           </NavLink>
@@ -128,7 +128,7 @@ function Footer() {
         <a
           className="footer__social-icons"
           target="_blank"
-          href="https://telegram.org"
+          href="https://t.me/alisherabbosov"
         >
           <img src={TelegramLogo} alt="Telegram logo" />
         </a>

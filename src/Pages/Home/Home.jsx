@@ -10,6 +10,7 @@ import { Context as ProductsContext } from "../../Context/Products/Products";
 function Home() {
   const { products } = React.useContext(ProductsContext);
   const navigate = useNavigate();
+
   return (
     <div className="home">
       <div>

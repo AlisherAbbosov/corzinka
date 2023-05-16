@@ -9,15 +9,17 @@ import { Provider as ProductsProvider } from "./Context/Products/Products";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <LangProvider>
-      <SavedProvider>
-        <BackedProvider>
-          <ProductsProvider>
-            <App />
-          </ProductsProvider>
-        </BackedProvider>
-      </SavedProvider>
-    </LangProvider>
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <LangProvider>
+        <SavedProvider>
+          <BackedProvider>
+            <ProductsProvider>
+              <App />
+            </ProductsProvider>
+          </BackedProvider>
+        </SavedProvider>
+      </LangProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );

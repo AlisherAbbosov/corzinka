@@ -22,6 +22,11 @@ const languages = {
       text: "Lekin buni to'g'irlash uchun hechqachon kech emas :)",
       button: "Mahsulotlar katalogiga",
     },
+    product: {
+      characteristicsTitle: "Opisanie va xarakteristikasi",
+      buttonBuy: "Sotib olish!",
+      addToBacked: "Savatchaga qo'shish",
+    },
   },
   ru: {
     footer: {
@@ -45,6 +50,11 @@ const languages = {
       text: "Но это никогда не поздно исправить :)",
       button: "В каталог товаров",
     },
+    product: {
+      characteristicsTitle: "Описание и характеристики",
+      buttonBuy: "Купить!",
+      addToBacked: "Добавить в корзину",
+    },
   },
   en: {
     footer: {
@@ -67,6 +77,11 @@ const languages = {
       title: "Backed is empty",
       text: "But it's never late to fix it :)",
       button: "To product catalog",
+    },
+    product: {
+      characteristicsTitle: "Description and characteristics",
+      buttonBuy: "Buy!",
+      addToBacked: "Add to backed",
     },
   },
 };
