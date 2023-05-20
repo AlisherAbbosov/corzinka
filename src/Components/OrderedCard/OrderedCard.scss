@@ -1,0 +1,98 @@
+.cart__card {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 18px 28px 17px 18px;
+  position: relative;
+
+  &-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 17px;
+  }
+  &-img {
+    margin-right: 23px;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    color: #1c1c27;
+    margin-bottom: 12px;
+  }
+
+  &-price {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #aaaaaa;
+  }
+
+  &-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-totalprice {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: right;
+    color: #1c1c27;
+  }
+  &-quantity {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000000;
+
+    &-box {
+      display: flex;
+      align-items: center;
+      width: 125px;
+      justify-content: space-between;
+    }
+
+    &-btn {
+      width: 35.17px;
+      height: 30px;
+      background: #ffce7f;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.disabled {
+        opacity: 0.5;
+      }
+    }
+
+    &-minus::before {
+      content: "";
+      width: 16.41px;
+      height: 2px;
+      background-image: url("../../Assets/Images/minus-icon.svg");
+    }
+    &-plus::before {
+      content: "";
+      width: 16.41px;
+      height: 14px;
+      background-image: url("../../Assets/Images/plus-icon.svg");
+    }
+  }
+
+  &-delete::before {
+    content: "";
+    background-image: url("../../Assets/Images/delete-icon.svg");
+    width: 19.93px;
+    height: 17px;
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    cursor: pointer;
+  }
+}

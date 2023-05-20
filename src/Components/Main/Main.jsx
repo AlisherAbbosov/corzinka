@@ -8,6 +8,7 @@ import Ordering from "../../Pages/Ordering/Ordering";
 import Product from "../../Pages/Product/Product";
 import Home from "../../Pages/Home/Home";
 import Cart from "../../Pages/Cart/Cart";
+import Ordered from "../../Pages/Ordered/Ordered";
 
 function Main() {
   return (
@@ -20,6 +21,7 @@ function Main() {
         <Route path="/service-requirements" element={<Service />} />
         <Route path="/ordering" element={<Ordering />} />
         <Route path="/product/:product_id" element={<Product />} />
+        <Route path="/ordered" element={<Ordered />} />
       </Routes>
     </div>
   );

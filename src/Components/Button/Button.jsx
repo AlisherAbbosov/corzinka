@@ -1,10 +1,17 @@
 import "./Button.scss";
 
-function Button({ variant, children, handleaddtobacked, navigate }) {
+function Button({
+  variant,
+  type = "button",
+  children,
+  handleaddtobacked,
+  handleBuy,
+}) {
   return (
     <button
       className={`button ${variant}`}
-      onClick={handleaddtobacked ? handleaddtobacked : navigate}
+      type={type}
+      onClick={handleaddtobacked ? handleaddtobacked : handleBuy}
     >
       {children}
     </button>

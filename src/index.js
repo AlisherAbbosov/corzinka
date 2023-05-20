@@ -6,6 +6,7 @@ import { Provider as LangProvider } from "./Context/Localization/Localization";
 import { Provider as SavedProvider } from "./Context/SavedProducts/SavedProducts";
 import { Provider as BackedProvider } from "./Context/OrderedProducts/OrderedProducts";
 import { Provider as ProductsProvider } from "./Context/Products/Products";
+import { Provider as DeliveryProvider } from "./Context/HasDelivery/HasDelivery";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +16,9 @@ root.render(
         <SavedProvider>
           <BackedProvider>
             <ProductsProvider>
-              <App />
+              <DeliveryProvider>
+                <App />
+              </DeliveryProvider>
             </ProductsProvider>
           </BackedProvider>
         </SavedProvider>

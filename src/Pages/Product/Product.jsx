@@ -7,36 +7,33 @@ import BackedIcon from "../../Assets/Images/backet-light.svg";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { Context as ProductsContext } from "../../Context/Products/Products";
 import { Context as LangContext } from "../../Context/Localization/Localization";
+import { Context as SavedContext } from "../../Context/SavedProducts/SavedProducts";
 import languages from "../../Localization/Localization";
 import Button from "../../Components/Button/Button";
 
 import { Context as OrderedProductsContext } from "../../Context/OrderedProducts/OrderedProducts";
+import GeneratePrice from "../../Functions/GeneratePrice";
 
 function Product() {
-  const { products } = React.useContext(ProductsContext);
+  const { products, setProducts } = React.useContext(ProductsContext);
   const { ordered, setOrdered } = React.useContext(OrderedProductsContext);
+  const { saved, setSaved } = React.useContext(SavedContext);
   const { lang } = React.useContext(LangContext);
   const { product_id } = useParams();
   const [hasOrder, setHasOrder] = React.useState(false);
   const product = products.find(p => p?.id == product_id);
 
-  // window.localStorage.setItem("product", JSON.stringify(currectProduct));
+  const handleSave = evt => {
+    let productId = evt.target.dataset.productId - 0;
 
-  // const { product, setProduct } = React.useState(
-  //   JSON.parse(window.localStorage.getItem("product"))
-  // );
+    const foundProduct = products.find(p => p.id === productId);
 
-  // setProduct(currectProduct);
+    foundProduct.isSaved = !foundProduct.isSaved;
+    setProducts([...products]);
 
-  const generatePrice = () => {
-    switch (lang) {
-      case "en":
-        return `${product.price} Sum`;
-      case "ru":
-        return `${product.price} Сум`;
-      case "uz":
-        return `${product.price} So'm`;
-    }
+    const savedProducts = products.filter(p => p.isSaved);
+
+    setSaved([...savedProducts]);
   };
 
   const handleAddToBacked = () => {
@@ -64,9 +61,35 @@ function Product() {
     }
   };
 
+  const handleBuy = () => {
+    const newOrderedProduct = {
+      count: 1,
+      product,
+    };
+    if (ordered.length == 0) {
+      setOrdered([...ordered, newOrderedProduct]);
+      return;
+    } else {
+      for (let order of ordered) {
+        if (order.product.id != product.id) {
+          setOrdered([...ordered, newOrderedProduct]);
+        } else {
+          setOrdered([...ordered]);
+          return;
+        }
+      }
+    }
+  };
+
   return (
     <div className="product">
       <div className="product__top">
+        <button
+          className={`product__save-btn ${product.isSaved ? "active" : ""}`}
+          data-product-id={product.id}
+          onClick={evt => handleSave(evt)}
+          title="Add product to saved"
+        ></button>
         <div className="product__images-box">
           {product.images.map(img => (
             <img className="product__img" src={img} key={img} />
@@ -76,7 +99,7 @@ function Product() {
           <h3 className="product__title product__title-secondary">
             {product[lang]?.title}
           </h3>
-          <p className="product__price">{generatePrice()}</p>
+          <p className="product__price">{GeneratePrice(product.price)}</p>
         </div>
       </div>
       <div className="product__bottom">
@@ -93,7 +116,7 @@ function Product() {
           </ul>
         </div>
         <div className="product__btn-box">
-          <Link to="/cart">
+          <Link to="/cart" onClick={() => handleBuy()}>
             <Button variant="black product-buy">
               {languages[lang]?.product.buttonBuy}
             </Button>

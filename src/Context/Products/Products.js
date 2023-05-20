@@ -9,7 +9,7 @@ function Provider({ children }) {
       const data = await res.json();
       setProducts([...data]);
     })();
-  }, [products]);
+  }, []);
 
   return (
     <Context.Provider value={{ products, setProducts }}>

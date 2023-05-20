@@ -4,19 +4,29 @@
   border-radius: 20px;
   font-size: 20px;
   line-height: 24px;
-  border: none;
   cursor: pointer;
+  background-position: 1% 50%;
+  background-size: 300% 300%;
+  white-space: nowrap;
   text-align: center;
   color: #ffffff;
-  transition: all 0.5s;
+  transition: all 0.7s;
+  border: 1px solid rgba(255, 255, 255, 0);
+  background-image: linear-gradient(
+    45deg,
+    transparent 0%,
+    transparent 75%,
+    rgba(255, 255, 255, 0.8) 75%,
+    transparent 100%
+  );
   &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-position: 150% top;
   }
   &:active {
     transition: all 0.3s;
-    transform: translateY(3px);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(2px);
+    transform: translateY(-2px);
   }
 
   &.black {
@@ -46,5 +56,15 @@
     white-space: nowrap;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+  }
+
+  &.cart__btn {
+    padding: 22px 0;
+    width: 100%;
+  }
+
+  &.end-btn {
+    padding: 13px 0;
+    width: 100%;
   }
 }

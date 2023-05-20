@@ -37,3 +37,18 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+.page__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #1c1c27;
+  margin-bottom: 13px;
+}
+
+.text__secondary {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #1c1c27;
+}
