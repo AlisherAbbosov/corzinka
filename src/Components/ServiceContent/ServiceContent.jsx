@@ -1,17 +1,18 @@
+import React from "react";
+
 import "./ServiceContent.scss";
 
+import languages from "../../Localization/Localization";
+import { Context } from "../../Context/Localization/Localization";
+
 function ServiceContent() {
+  const { lang } = React.useContext(Context);
   return (
     <div className="service__content">
-      <h4 className="service__content-title">Условия сервиса</h4>
-      <p className="service__content-text">
-        Задача организации, в особенности же курс на социально-ориентированный
-        национальный проект требует от нас системного анализа модели развития!
-        Таким образом, постоянное информационно-техническое обеспечение нашей
-        деятельности требует от нас анализа системы масштабного изменения ряда
-        параметров! С другой стороны социально-экономическое развитие напрямую
-        зависит от всесторонне сбалансированных нововведений?
-      </p>
+      <h4 className="service__content-title">
+        {languages[lang].service.title}
+      </h4>
+      <p className="service__content-text">{languages[lang].service.text}</p>
     </div>
   );
 }
