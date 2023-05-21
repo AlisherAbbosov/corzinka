@@ -1,0 +1,104 @@
+.deliverycard {
+  width: 445px !important;
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 23px 31px 32px 38px;
+  margin-right: 31px;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__map {
+    margin-bottom: 20px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding-right: 7px;
+
+    &-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__location-icon {
+    margin-right: 11px;
+  }
+
+  &__select {
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: black;
+
+    &-option {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      color: black !important;
+
+      &-slected {
+        color: #8e8e8e !important;
+      }
+    }
+  }
+
+  &__input {
+    background: #d6d6d6;
+    border-radius: 15px;
+    border: none;
+    padding: 14px;
+    &:focus {
+      transition: all 2s;
+      outline: 1px solid black;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 18px;
+      color: #8e8e8e;
+    }
+    &-house {
+      max-width: 164px;
+    }
+    &-entrance {
+      max-width: 174px;
+    }
+    &-apartment {
+      max-width: 164px;
+    }
+    &-box {
+      position: relative;
+    }
+  }
+
+  &__label {
+    width: 18px;
+    height: 18px;
+    top: 14px;
+    right: 13px;
+    cursor: text;
+    background-image: url("../../Assets/Images/change-icon.svg");
+    position: absolute;
+  }
+}
