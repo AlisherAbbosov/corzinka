@@ -55,6 +55,10 @@ const languages = {
       numberOfRecipient: "Qabul giluvchining raqami",
       endButton: "Buyurtani tugatish",
     },
+    ordered: {
+      firstMessage: "Sizning buyurtmangiz raqami №",
+      secondMessage: "siz bilan menejerlarimiz bog'lanishadi.",
+    },
   },
   ru: {
     footer: {
@@ -111,6 +115,10 @@ const languages = {
       numberOfRecipient: "Номер получателя",
       endButton: "Закончить оформление",
     },
+    ordered: {
+      firstMessage: "Номер вашего заказа №",
+      secondMessage: "с Вами свяжется наш менеджер.",
+    },
   },
   en: {
     footer: {
@@ -166,6 +174,10 @@ const languages = {
       promocode: "Got a promocade?",
       numberOfRecipient: "Number of recipients",
       endButton: "End the ordering",
+    },
+    ordered: {
+      firstMessage: "Your order number is №",
+      secondMessage: "our manager will contact you.",
     },
   },
 };

@@ -1,0 +1,15 @@
+.ordered {
+  padding: 41px 0;
+  text-align: center;
+  &__message {
+    &-box {
+      background: #ffffff;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+      padding: 37px 71px;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

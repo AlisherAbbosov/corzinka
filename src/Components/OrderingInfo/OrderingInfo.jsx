@@ -12,19 +12,25 @@ import {
 } from "../../Functions/GenerateTotal";
 import GeneratePrice from "../../Functions/GeneratePrice";
 import Button from "../Button/Button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function OrderingInfo() {
   const { lang } = React.useContext(LongContext);
-  const { ordered } = React.useContext(OrderedContext);
+  const { ordered, setOrdered } = React.useContext(OrderedContext);
   const { delivery } = React.useContext(DeliveryContext);
   const [method, setMethod] = React.useState("credit-bank");
+
+  const navigate = useNavigate();
 
   const getNumberOfOrders = () => {
     let number = 0;
 
     ordered.forEach(order => (number += order.count));
     return number;
+  };
+  let handleEnd = () => {
+    navigate("/ordered");
+    setOrdered([]);
   };
   return (
     <div className="orderinginfo">
@@ -121,11 +127,9 @@ function OrderingInfo() {
         </div>
       </div>
 
-      <Link to="/ordered">
-        <Button type="submit" variant="black end-btn">
-          {languages[lang].ordering.endButton}
-        </Button>
-      </Link>
+      <Button type="submit" variant="black end-btn" handleEnd={handleEnd}>
+        {languages[lang].ordering.endButton}
+      </Button>
     </div>
   );
 }

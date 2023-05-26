@@ -51,6 +51,7 @@ function Product() {
         setHasOrder(false);
       } else {
         setHasOrder(true);
+
         alert("You have already added!");
         return;
       }
