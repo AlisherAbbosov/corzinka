@@ -22,6 +22,11 @@ const languages = {
       text: "Lekin buni to'g'irlash uchun hechqachon kech emas :)",
       button: "Mahsulotlar katalogiga",
     },
+    emptysaved: {
+      title: "Sizga yoqqanini qoʻshing",
+      text: "Mahsulotdagi ♡ belgisini bosing va barcha saralanganlar saqlanib qoladi",
+      button: "Mahsulotlar katalogiga",
+    },
     product: {
       characteristicsTitle: "Opisanie va xarakteristikasi",
       buttonBuy: "Sotib olish!",
@@ -82,6 +87,11 @@ const languages = {
       text: "Но это никогда не поздно исправить :)",
       button: "В каталог товаров",
     },
+    emptysaved: {
+      title: "Добавьте то, что понравилось",
+      text: "Нажмите на ♡ в товаре и всё избранное сохранится",
+      button: "В каталог товаров",
+    },
     product: {
       characteristicsTitle: "Описание и характеристики",
       buttonBuy: "Купить!",
@@ -140,6 +150,11 @@ const languages = {
     emptybacked: {
       title: "Backed is empty",
       text: "But it's never late to fix it :)",
+      button: "To product catalog",
+    },
+    emptysaved: {
+      title: "Add what you like",
+      text: "Click on ♡ the product and all your favorites will be saved",
       button: "To product catalog",
     },
     product: {

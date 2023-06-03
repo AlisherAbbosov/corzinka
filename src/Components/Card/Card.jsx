@@ -1,39 +1,18 @@
 import "./Card.scss";
 import RatingIcon from "../../Assets/Images/rating-icon.svg";
-import CardImg from "../../Assets/Images/card-img.jpg";
 import { Context as LangContext } from "../../Context/Localization/Localization";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import React from "react";
 import GeneratePrice from "../../Functions/GeneratePrice";
-import saveIcon from "../../Assets/Images/like-icon.svg";
-import { Context as SavedContext } from "../../Context/SavedProducts/SavedProducts";
-import { Context as ProductContext } from "../../Context/Products/Products";
 
 function Card({ product }) {
   const navigate = useNavigate();
   const { lang } = React.useContext(LangContext);
-  const { products, setProducts } = React.useContext(ProductContext);
-  const { saved, setSaved } = React.useContext(SavedContext);
-
-  const handleSave = evt => {
-    let productId = evt.target.dataset.productId - 0;
-
-    const foundProduct = products.find(p => p.id === productId);
-
-    foundProduct.isSaved = !foundProduct.isSaved;
-    setProducts([...products]);
-    console.log(products);
-  };
 
   return (
     <div className="card" onClick={() => navigate("/product/" + product.id)}>
-      <button
-        className={`card__save-btn ${product.isSaved ? "active" : ""}`}
-        data-product-id={product.id}
-        onClick={evt => handleSave(evt)}
-        title="Add product to saved"
-      ></button>
+     
       <div className="card__img-box">
         <img className="card__img" src={product.images[0]} alt="the product" />
       </div>

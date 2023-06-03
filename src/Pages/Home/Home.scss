@@ -1,11 +1,15 @@
 .home {
-  margin-bottom: 60px;
+  padding: 20px 0 60px;
 }
 
 .product-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+}
+
+.product-item {
+  position: relative;
 }
 
 .category-name {

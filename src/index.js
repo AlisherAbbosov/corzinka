@@ -11,9 +11,9 @@ import { Provider as DeliveryProvider } from "./Context/HasDelivery/HasDelivery"
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <LangProvider>
-        <SavedProvider>
+    <SavedProvider>
+      <BrowserRouter>
+        <LangProvider>
           <BackedProvider>
             <ProductsProvider>
               <DeliveryProvider>
@@ -21,8 +21,8 @@ root.render(
               </DeliveryProvider>
             </ProductsProvider>
           </BackedProvider>
-        </SavedProvider>
-      </LangProvider>
-    </BrowserRouter>
+        </LangProvider>
+      </BrowserRouter>
+    </SavedProvider>
   </React.StrictMode>
 );
